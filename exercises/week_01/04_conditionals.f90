@@ -6,17 +6,21 @@ program conditionals
     write(*, '(A)', advance = 'no') "Enter an integer: "
     read *, number
 
-    if (number > 0) then
-        print '(A)', "The number is positive"
-    else if (number < 0) then
-        print '(A)', "The number is negative"
+    if (number > 0 .and. mod(number,2)==0 ) then
+        print '(A)', "The number is positive and even"
+
+    else if (number > 0 .and. mod(number,2)==1 ) then
+        print '(A)', "The number is positive and odd"
+
+    else if (number < 0 .and. mod(number,2)==0  ) then
+        print '(A)', "The number is negative and even"
+
+    else if (number < 0 .and. mod(number,2)==1  ) then
+        print '(A)', "The number is negative and odd"
+
     else 
         print '(A)', "The number is zero"
 
-    end if
-
-    if (number >= 1 .and. number <= 9) then
-        print '(A)', "Single positive number"
     end if
 
 end program conditionals
