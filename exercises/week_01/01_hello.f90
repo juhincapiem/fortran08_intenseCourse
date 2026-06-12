@@ -2,5 +2,5 @@ program hello     ! All executable Fortran program needs a "program" block with 
     implicit none ! Always write this code line. This disables a weird and old
                   ! fashion rule  
     print *, "Hello Fortran 2008"   ! First argument (*) means output format and second
-                                    ! one the contnect         
+                                    ! one the content         
 end program
