@@ -15,4 +15,8 @@ program conditionals
 
     end if
 
+    if (number >= 1 .and. number <= 9) then
+        print '(A)', "Single positive number"
+    end if
+
 end program conditionals
