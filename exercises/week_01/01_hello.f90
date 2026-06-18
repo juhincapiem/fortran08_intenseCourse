@@ -3,4 +3,4 @@ program hello     ! All executable Fortran program needs a "program" block with 
                   ! fashion rule  
     print *, "Hello Fortran 2008"   ! First argument (*) means output format and second
                                     ! one the content         
-end program
+end program hello

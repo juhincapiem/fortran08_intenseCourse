@@ -15,4 +15,4 @@ program io_format
 
     ! If don't give enough space for the number, it would print ****
 
-end program
+end program io_format

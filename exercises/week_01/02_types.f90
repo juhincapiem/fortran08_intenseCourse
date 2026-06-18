@@ -19,4 +19,4 @@ program types_demo
     print *, "is_ready:         ", is_ready
     print *, "name:             ", name
 
-end program
+end program types_demo
