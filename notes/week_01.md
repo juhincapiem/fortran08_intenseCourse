@@ -19,6 +19,21 @@
 - Commit several times per session, while Push at the end of the session
 
 
+### Commit message
+
+## Commit message prefixes
+
+| Prefix      | When                                          | Example |
+|-------------|-----------------------------------------------|---------|
+| `feat:`     | new code that does something                  | `feat: add Fibonacci loop exercise (06)` |
+| `fix:`      | fix a bug (code worked wrong, now right)      | `fix: correct off-by-one in loop bound` |
+| `docs:`     | comments, notes, README, explanations         | `docs: fix typo in hello world comments` |
+| `style:`    | form only — spacing, indentation, naming end  | `style: name the end program statement` |
+| `refactor:` | reorganize structure/logic, same behavior     | `refactor: extract norm into a function` |
+| `chore:`    | plumbing — gitignore, config, build, files    | `chore: ignore compiled executables (*.x)` |
+| `test:`     | add or change tests                           | `test: add cases for edge inputs` |
+
+
 ## What I've learned about Fortran so far
 
 ### At the beginning of the program
