@@ -10,7 +10,7 @@ program loops_for
     a = 0
     b = 1
 
-    do i = 1, n
+    do i = 1, n, 1
 
         temp = a + b
 
