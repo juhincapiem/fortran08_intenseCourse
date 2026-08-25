@@ -19,9 +19,7 @@
 - Commit several times per session, while Push at the end of the session
 
 
-### Commit message
-
-## Commit message prefixes
+### Commit message prefixes
 
 | Prefix      | When                                          | Example |
 |-------------|-----------------------------------------------|---------|
@@ -54,5 +52,5 @@
 - end if
 
 ### Input/Output format
-- When using "print" or "write" commands, you have to inform the type of variable are going to be printed on terminal. For e.g., if you a string and then a real number, it would be    '(A, ES12.4)'
+- When using "print" or "write" commands, you have to inform the type of variable are going to be printed on terminal. For e.g., if you are printing a string and then a real number, it would be '(A, ES12.4)'
 - "ES" is scientific notation, where "S" means scientific and "E" is the exponent. The number 12 means the total length for that field, 4 is the numer of decimals. 
