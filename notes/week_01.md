@@ -54,3 +54,25 @@
 ### Input/Output format
 - When using "print" or "write" commands, you have to inform the type of variable are going to be printed on terminal. For e.g., if you are printing a string and then a real number, it would be '(A, ES12.4)'
 - "ES" is scientific notation, where "S" means scientific and "E" is the exponent. The number 12 means the total length for that field, 4 is the numer of decimals. 
+- When using the combination "I0", 0 means minimun space required for printing the integer.
+
+
+### Arrays
+- You can initialize the array in this way: "real:: v(10)". The number between parentheses means the number of elements the vector must have.
+- Important: indices start at 1, not at 0 as in python. 
+- If the vector contains a sequence of numebrs, you can use a implied do in this way for the assignment process: "v = [(real(i), i = 1, 10)]"
+- To print the vector in the terminal you have to options:
+    - If you know the number of elements: "print '10F7.1', v"
+    - If you don't know for sure the number of elements: "print '(*(F7.1))', v"
+
+
+### Matrices
+- You can initialize the array in the following way: "real:: A(3,3)", which means, 3 rows and 3 columns.
+- In order to print the matrix, it's not as straight-forward as with arrays. You must a do loop in this way:
+
+    do i = 1, 3
+        print '(*(F8.1))', A(i, :)
+    end do 
+
+### Procedures
+- 
