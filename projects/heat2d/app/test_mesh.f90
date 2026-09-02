@@ -7,7 +7,7 @@ program test_mesh
     character(len=100) :: file_name
     integer :: n_nodes
 
-    file_name = '../mesh/unit_square.msh'
+    file_name = './mesh/unit_square.msh'
 
     call read_nodes(file_name, node_matrix, n_nodes)
     call read_elements(file_name, connectivity_matrix, boundary_matrix)
