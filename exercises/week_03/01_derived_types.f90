@@ -27,7 +27,7 @@ module geometry_types
         c%x = (tri%v1%x + tri%v2%x + tri%v3%x) / 3.0_dp
         c%y = (tri%v1%y + tri%v2%y + tri%v3%y) / 3.0_dp
 
-    end function
+    end function centroid
 
 end module geometry_types
 
