@@ -19,8 +19,8 @@ derived type. Inside the type, you write a "contains" section, where you
 link functions or subroutines (defined in the module's "contains" section)
 by using the "procedure ::" declaration.
 
-So there are TWO contains:
-- the one inside the type: DECLARES which methods exist
+So there are TWO "contains" to take into account:
+- the one inside the "type" declaration: DECLARES which methods exist
 - the one in the module: holds the actual CODE of those methods
 
 Some extra info:
