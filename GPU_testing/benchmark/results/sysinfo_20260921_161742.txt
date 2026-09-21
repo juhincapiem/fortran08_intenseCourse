@@ -1,0 +1,14 @@
+fecha: lun 21 sep 2026 16:17:42 CEST
+NREP=3 NWARM=1 EXPS=20
+
+CPU(s):                               32
+Model name:                           13th Gen Intel(R) Core(TM) i9-13900
+Thread(s) per core:                   2
+Core(s) per socket:                   24
+Socket(s):                            1
+
+name, driver_version, clocks.max.sm [MHz], clocks.max.memory [MHz]
+NVIDIA T1000, 595.91.07, 2100 MHz, 5001 MHz
+
+GNU Fortran (Ubuntu 12.3.0-1ubuntu1~22.04.3) 12.3.0
+nvfortran 26.5-0 64-bit target on x86-64 Linux -tp alderlake 
