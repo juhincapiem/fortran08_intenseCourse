@@ -5,7 +5,7 @@ module utils
     private
     public :: dp, dp_int, add
 
-    integer, parameter :: dp = real32
+    integer, parameter :: dp = real64
     integer, parameter :: dp_int = int64
 
 contains
@@ -16,7 +16,7 @@ contains
         real(dp), intent(inout) :: y(n)
         integer(dp_int) :: i
 
-        !$omp target teams distribute parallel do num_teams(80) thread_limit(256)
+        !$omp target teams distribute parallel do
         do i = 1, n
             y(i) = x(i) + y(i)
         end do
@@ -46,20 +46,28 @@ program gpu_data
         stop 1
     end if
 
-    do i = 1, N
-        x(i) = 1.0_dp
-        y(i) = 2.0_dp
-    end do
+    ! WARMING-UP
+    !$omp target
+    !$omp end target
 
     t_total = omp_get_wtime()
 
-    !$omp target data map(to: x) map(tofrom: y)
+    !$omp target data map(alloc: x) map(alloc: y)
+
+    !$omp target teams distribute parallel do
+    do i = 1, N
+        x(i) = 1.0_dp
+        !y(i) = 2.0_dp
+    end do
+    !$omp end target teams distribute parallel do
+
 
     t_best = huge(1.0_dp)
     do rep = 1, 10
 
         !$omp target teams distribute parallel do
         do i = 1, N
+            !x(i) = 1.0_dp
             y(i) = 2.0_dp
         end do
         !$omp end target teams distribute parallel do
@@ -72,6 +80,7 @@ program gpu_data
         if (rep > 1) t_best = min(t_best, t1 - t0)
     end do
 
+    !$omp target update from(y)
     !$omp end target data
 
     t_total = omp_get_wtime() - t_total
@@ -86,3 +95,5 @@ program gpu_data
 
 end program gpu_data
 ! gfortran-13 -fopenmp -foffload=nvptx-none -O2 -Wall ./add_gpu_parallel.f90 -o ./add_gpu_parallel.x && OMP_TARGET_OFFLOAD=MANDATORY ./add_gpu_parallel.x
+! nvfortran -mp=gpu -gpu=cc80 -O2 -Minfo=mp ./add_gpu_parallel.f90 -o ./add_gpu_parallel.x && OMP_TARGET_OFFLOAD=MANDATORY ./add_gpu_parallel.x
+! nvfortran -mp=gpu -gpu=cc75 -O2 -Minfo=mp ./add_gpu_parallel.f90 -o ./add_gpu_parallel.x && OMP_TARGET_OFFLOAD=MANDATORY ./add_gpu_parallel.x
