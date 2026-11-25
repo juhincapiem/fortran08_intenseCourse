@@ -139,12 +139,14 @@ module mesh_type
         read(unit_num, *, iostat=ios, iomsg=errmsg)  self%n_elem
         if (ios /= 0) return
 
-        ! Fill  both matrix at the "same time":
+        allocate(self%boundary_matrix(self%n_elem,5)) 
+
+        ! Fill  both matrix at the "same time": boundary and connectivity in just one pass
         do i = 1, self%n_elem
             read(unit_num, iostat=ios, iomsg=errmsg)
             if (ios /= 0) return
 
-            
+
 
 
         end do
